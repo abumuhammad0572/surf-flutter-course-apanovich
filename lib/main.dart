@@ -73,7 +73,8 @@ class MyFirstWidget extends StatelessWidget {
   int counter = 0;
   Widget build(BuildContext context) {
     counter++;
-    print(counter); //метод билд вызвался один раз
+    print(counter); //метод билд вызвался один раз,
+    // т.к. виджет без состояния и все данные перерисовываются заново
     return Container(
       child: const Center(
         child: Text('Hello!'),
@@ -93,7 +94,7 @@ class _MySecondWidgetState extends State<MySecondWidget> {
   @override
   Widget build(BuildContext context) {
     counter++;
-    print(counter); //метод билд вызвался два раза
+    print(counter); //в памяти сохраняется текущее состояние счетчика
     return Container(
       child: const Center(
         child: Text('Hello!'),
