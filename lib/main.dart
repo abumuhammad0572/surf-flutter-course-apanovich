@@ -4,7 +4,7 @@ void main() {
   runApp(const App());
 }
 
-
+// при переименовании файла мейн выдается ошибка из за того что не найден файл с точкой входа
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -69,9 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class MyFirstWidget extends StatelessWidget {
   MyFirstWidget({Key? key}) : super(key: key);
-
-  @override
   int counter = 0;
+  @override
   Widget build(BuildContext context) {
     counter++;
     print(counter); //метод билд вызвался один раз
@@ -81,14 +80,16 @@ class MyFirstWidget extends StatelessWidget {
       ),
     );
   }
-  Type getContextRuntimeType() => context.runtimeType;
+  //Type getContextRuntimeType() => context.runtimeType;
+  //реализовать не получилось, выдает ошибку
 }
 
 class MySecondWidget extends StatefulWidget {
-  const MySecondWidget({Key? key}) : super(key: key);
+   MySecondWidget({Key? key}) : super(key: key);
 
   @override
   State<MySecondWidget> createState() => _MySecondWidgetState();
+  int counter = 0;
 }
 int counter = 0;
 class _MySecondWidgetState extends State<MySecondWidget> {
@@ -103,4 +104,5 @@ class _MySecondWidgetState extends State<MySecondWidget> {
     );
   }
   Type getContextRuntimeType() => context.runtimeType;
+  //получилось реализовать
 }
