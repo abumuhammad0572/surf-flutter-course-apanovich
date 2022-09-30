@@ -10,8 +10,24 @@ class SightListScreen extends StatefulWidget {
 class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white10,
+        elevation: 0,
+        toolbarHeight: 80,
+        title: const Text(
+          'Список \nинтересных мест',
+          maxLines: 2,
+          style: TextStyle(
+            color: Color(0xFF252849),
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.bold,
+            fontSize: 36,
+          ),
+          textAlign: TextAlign.start,
+        ),
+      ),
+      body: const Center(
         child: Text('Hello!'),
       ),
     );
