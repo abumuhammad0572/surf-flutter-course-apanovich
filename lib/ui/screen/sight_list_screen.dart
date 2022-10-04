@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:places/mocks.dart';
+import 'package:places/ui/screen/sight_card.dart';
 
 class SightListScreen extends StatefulWidget {
   const SightListScreen({Key? key}) : super(key: key);
@@ -15,40 +17,26 @@ class _SightListScreenState extends State<SightListScreen> {
         backgroundColor: Colors.white10,
         elevation: 0,
         toolbarHeight: 80,
-        title: RichText(
-          text: const TextSpan(
-            text: 'С',
-            style: TextStyle(
-              color: Color(0xFF4CAF50),
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.bold,
-              fontSize: 36,
-            ),
-            children: [
-              TextSpan(
-                text: 'писок \n',
-                style: TextStyle(
-                  color: Color(0xFF3B3E5B),
-                ),
-              ),
-              TextSpan(
-                text: 'и',
-                style: TextStyle(
-                  color: Color(0xFFFCDD3D),
-                ),
-              ),
-              TextSpan(
-                text: 'нтересных мест',
-                style: TextStyle(
-                  color: Color(0xFF3B3E5B),
-                ),
-              ),
-            ],
+        title: const Text(
+          'Список \nинтересных мест',
+          maxLines: 2,
+          style: TextStyle(
+            color: Color(0xFF252849),
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.bold,
+            fontSize: 36,
           ),
+          textAlign: TextAlign.start,
         ),
       ),
-      body: const Center(
-        child: Text('Hello!'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SightCard(sight: mocks[0]),
+            SightCard(sight: mocks[1]),
+            SightCard(sight: mocks[2]),
+          ],
+        ),
       ),
     );
   }
