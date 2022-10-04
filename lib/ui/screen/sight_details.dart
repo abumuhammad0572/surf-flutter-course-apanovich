@@ -20,8 +20,10 @@ class SightDetails extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Container(
+            width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   sight.name,
@@ -59,12 +61,12 @@ class SightDetails extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Построить маршрут'),
-                ),
               ],
             ),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Построить маршрут'),
           ),
         ],
       ),
